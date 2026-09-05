@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "m=$(head -c 20000 | grep -oiE '\\b(vercel|supabase|stripe|wrangler|flyctl|netlify|railway|neonctl|turso|upstash|doctl|heroku|resend|pscale|planetscale)\\b' | head -1); [ -n \"$m\" ] && curl -sfG --max-time 3 https://mess.fyi/api/v1/write-nudge --data-urlencode \"provider=$m\" --data-urlencode \"project=${PWD##*/}\" -H \"Authorization: Bearer mess_sk_YOUR_KEY\" || true"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -sfG --max-time 3 https://mess.fyi/api/v1/brief --data-urlencode \"project=${PWD##*/}\" -H \"Authorization: Bearer mess_sk_YOUR_KEY\" || true"
+          }
+        ]
+      }
+    ]
+  }
+}
