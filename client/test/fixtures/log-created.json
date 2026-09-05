@@ -1,0 +1,26 @@
+{
+  "created": true,
+  "account": {
+    "id": "5f0c6a1e-0000-4000-8000-000000000003",
+    "name": "Resend",
+    "instance_name": "Acme transactional email",
+    "role": "email",
+    "ownership": "owned",
+    "status": "active",
+    "account_email": null,
+    "plan_name": null,
+    "monthly_cost": 0,
+    "project": "acme-web",
+    "login_url": "https://resend.com/login",
+    "account_identifier": null,
+    "credentials_location": null,
+    "notes": null,
+    "created_at": "2026-09-01T08:00:00.000000+00:00",
+    "updated_at": "2026-09-01T08:00:00.000000+00:00",
+    "last_kept_via": "rest",
+    "last_kept_by": "first agent",
+    "last_confirmed_at": "2026-09-01T08:00:00.000+00:00"
+  },
+  "gaps": ["account_email", "credentials_location"],
+  "gaps_note": "Close these while the context exists, cheapest source first."
+}

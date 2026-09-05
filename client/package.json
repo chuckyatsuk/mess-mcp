@@ -1,0 +1,37 @@
+{
+  "name": "@mess/client",
+  "version": "0.0.0",
+  "description": "Typed zero-dependency client for the MESS REST API (mess.fyi) — the ledger your agents keep.",
+  "license": "MIT",
+  "homepage": "https://mess.fyi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/currentlycurrently/mess-mcp.git",
+    "directory": "client"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test test/*.test.mjs",
+    "smoke": "tsc && node smoke.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
