@@ -75,12 +75,27 @@ project runs on — and a write-moment nudge that speaks up when a session
 touches a provider CLI. Only a provider name and repo folder name are
 ever sent.
 
+Both hooks also live here, versioned:
+[`hooks/session-brief.json`](hooks/session-brief.json) and
+[`hooks/write-nudge.json`](hooks/write-nudge.json) — the same JSON the
+app serves, with `mess_sk_YOUR_KEY` where your key goes. The paste is
+still the easy path; the repo copies are the inspectable one. Read what
+runs on your machine before you install it, and when it changes, see the
+change as a diff. To install from here, merge either file's `hooks`
+block into `~/.claude/settings.json` and put your key in.
+
 ## Full disclosure
 
 The handshake instructions the server sends your agent are published
 verbatim at [mess.fyi/mcp](https://mess.fyi/mcp) — every variant, plus
 the dig procedure and the hook nudges. If you'd rather your agent didn't
 volunteer writes, don't wire it in.
+
+That page is also mirrored in this repo, under
+[`disclosure/`](disclosure/): every variant, the dig, the nudge, as
+files. `npm run check-disclosure` fetches the live page and fails if the
+mirror has drifted — so "published verbatim" isn't a claim you have to
+take on trust, it's one with history.
 
 Free to 20 accounts. Teams share one ledger (scoped digs, personal stays
 personal) and add access breadth. Questions: hello@mess.fyi.
