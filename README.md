@@ -14,6 +14,19 @@ money with no recorded owner.
 for a secret value, on purpose. Discovery reads env var *names* and CLI
 auth state — secret values never move.
 
+## What's in this repo
+
+The server is a hosted service and stays closed. Everything client-side
+lives here, inspectable:
+
+| | |
+|---|---|
+| [`hooks/`](hooks/) | The optional Claude Code hooks the app serves, as versioned files. |
+| [`disclosure/`](disclosure/) | The [mess.fyi/mcp](https://mess.fyi/mcp) handshake texts, mirrored verbatim — with a sync script that proves it. |
+| [`client/`](client/) | A typed, zero-dependency TypeScript client for the REST surface. One file; read it in a sitting. |
+| [`examples/`](examples/) | A CI gate for unlogged providers, a ledger backup, a morning orientation script. |
+| [`ARCHITECTURE.md`](ARCHITECTURE.md) | How a production remote MCP server is put together, and why this one is shaped the way it is. |
+
 ## Setup
 
 Grab a free key at [mess.fyi](https://mess.fyi) (Settings → Agent keys), then:
