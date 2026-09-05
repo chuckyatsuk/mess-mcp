@@ -1,0 +1,7 @@
+# Key material never touches this repo. The smoke script reads MESS_KEY
+# from the environment or from an untracked .env at the repo root.
+.env
+.env.*
+
+node_modules/
+client/dist/
