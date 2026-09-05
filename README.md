@@ -23,7 +23,7 @@ lives here, inspectable:
 |---|---|
 | [`hooks/`](hooks/) | The optional Claude Code hooks the app serves, as versioned files. |
 | [`disclosure/`](disclosure/) | The [mess.fyi/mcp](https://mess.fyi/mcp) handshake texts, mirrored verbatim — with a sync script that proves it. |
-| [`client/`](client/) | A typed, zero-dependency TypeScript client for the REST surface. One file; read it in a sitting. |
+| [`client/`](client/) | A typed, zero-dependency TypeScript client for the REST surface — [`@mess.fyi/client`](https://www.npmjs.com/package/@mess.fyi/client) on npm. One file; read it in a sitting. |
 | [`examples/`](examples/) | A CI gate for unlogged providers, a ledger backup, a morning orientation script. |
 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | How a production remote MCP server is put together, and why this one is shaped the way it is. |
 

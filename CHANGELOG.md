@@ -4,6 +4,11 @@ What changed in this repo, newest first. (Server changes show up where
 they're published: the disclosure texts — watch [`disclosure/`](disclosure/)
 history for those.)
 
+## 2026-09-05 — @mess.fyi/client 0.1.0 on npm
+
+- First npm release of the client; releases publish from CI via npm
+  trusted publishing (OIDC) — no token stored anywhere, fittingly.
+
 ## 2026-09-05 — the companion build-out
 
 - `disclosure/`: the mess.fyi/mcp handshake texts mirrored verbatim, with

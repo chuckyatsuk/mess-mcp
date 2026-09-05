@@ -1,0 +1,26 @@
+# Publishes @mess.fyi/client to npm via trusted publishing (OIDC).
+# No token lives anywhere — npm trusts this workflow file in this repo,
+# configured at npmjs.com → @mess.fyi/client → Settings → Trusted Publisher.
+# Release flow: bump client/package.json version, tag v<version>, push the tag.
+name: publish
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  id-token: write # the OIDC exchange; no other permissions needed
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm test
+      - run: npm publish --access public
