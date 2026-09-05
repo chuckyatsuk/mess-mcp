@@ -39,10 +39,12 @@ outlives any one machine; the server holding it should too. Remote HTTP
 means wiring it in is one paste (the `claude mcp add` line in the
 README), every client gets the same server version, and a key revoked at
 [mess.fyi/settings/api](https://mess.fyi/settings/api) is dead everywhere
-at once. Statelessness per request also matches the workload: short
-tool calls against a database, no session affinity worth preserving.
-[OWNER? — happy to state whether the transport layer holds any session
-state at all, if you're willing to say.]
+at once. The transport holds no session state at all: every request is
+self-contained, authenticated by resolving the bearer key to its
+workspace on that request. Even the handshake's instruction variant —
+onboarding for an empty ledger, keeping instructions otherwise — is
+chosen per request from workspace state, not remembered from a session.
+The only memory anywhere is the ledger itself.
 
 ## The handshake is the product
 
@@ -69,14 +71,14 @@ Two engineering consequences follow:
 
 ## Keys and scoping
 
-Auth is a bearer agent key (`mess_sk_…`) per user, passed as an
-`Authorization` header on both surfaces. Keys are stored hashed,
-revocable any time, and writes are rate-limited per key. A key resolves
-to a workspace, and every read and write is scoped to it: the key *is*
-the tenancy boundary, there is no cross-workspace query surface.
-[OWNER? — is per-user-per-workspace the right way to describe key→
-workspace resolution on Team plans, or is a key per member per shared
-ledger? Happy to state it precisely if you'll confirm the model.]
+Auth is a bearer agent key (`mess_sk_…`), passed as an `Authorization`
+header on both surfaces. Keys are stored hashed, revocable any time at
+[mess.fyi/settings/api](https://mess.fyi/settings/api), and writes are
+rate-limited per key. A key resolves to a workspace, and every read and
+write is scoped to it: the key *is* the tenancy boundary, there is no
+cross-workspace query surface. Keys belong to members, not workspaces —
+on a Team, each member holds their own key to the one shared ledger, so
+revoking a person's key never means rotating the team's.
 
 Unauthenticated requests get one deliberately instructive error —
 `{"error": "Missing or invalid API key. Pass it as: Authorization:
