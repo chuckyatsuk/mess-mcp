@@ -1,0 +1,33 @@
+# Client tests on every change; disclosure drift checked weekly.
+# The Monday run is the one that matters: it fails loudly if the
+# disclosure/ mirror no longer matches what mess.fyi/mcp publishes —
+# i.e. the server's handshake changed and the mirror needs a re-sync
+# (npm run sync-disclosure, commit the diff).
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 9 * * 1" # Mondays 09:00 UTC
+jobs:
+  client-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
+  disclosure-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run check-disclosure
