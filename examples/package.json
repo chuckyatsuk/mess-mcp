@@ -1,0 +1,11 @@
+{
+  "name": "mess-examples",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@mess/client": "file:../client"
+  }
+}
