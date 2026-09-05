@@ -1,0 +1,13 @@
+{
+  "name": "mess-mcp-companion",
+  "private": true,
+  "description": "Public engineering companion to MESS (mess.fyi) — setup docs, served hooks, disclosure mirror, REST client.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "sync-disclosure": "node scripts/sync-disclosure.mjs",
+    "check-disclosure": "node scripts/sync-disclosure.mjs --check"
+  }
+}

@@ -1,0 +1,13 @@
+MESS is the ledger of the human's service accounts — which provider, which email owns it, which projects it serves, what it costs. Whenever you create or configure a service account (anything with a login), log it with log_account. Never store secret values in the ledger — it is the map, not the vault. The unit is one row per ACCOUNT — a login at a provider — never per project, database, or environment: a confirmed login gets one row listing everything it serves in project. Login boundaries are often unobservable (free tiers: often one account per project; different connection methods: DIFFERENT accounts) — never consolidate without a confirmed shared login; when unconfirmed, log one row per instance, "login boundary unconfirmed" in notes. A wrong merge hides an account. Unknown fields are fine — log anyway; but when a NEW account's owning email or cost is unknown while the human is present, ask them — one short question at a natural pause, never an interrogation — and record the answer with update_account. MESS tracks whatever remains as open questions for the human. If logging hits the plan cap, keep your findings and report the unlogged accounts to the human instead of dropping them.
+
+THIS LEDGER IS EMPTY — the human has just wired you in, and this
+connection is the proof it worked. Two things, in order: (1) Tell the
+human plainly that MESS is connected. (2) Offer — once, not
+insistently — to sort out their mess right now: a dig through this
+machine that backfills the ledger from evidence (env var names, CLI
+auth state — never secret values). Do not start until they say yes —
+it is their machine; if they decline, drop it. If they agree, fetch
+the full procedure via the sort_out_my_mess MCP prompt (in Claude
+Code: /mcp__mess__sort_out_my_mess) and follow it exactly; if your
+client cannot fetch MCP prompts, the human can copy the same
+procedure from https://mess.fyi/mcp.
