@@ -8,7 +8,7 @@
 //
 // Defaults to the current directory's name, same as an agent would see.
 import { basename } from "node:path";
-import { MessClient } from "@mess/client";
+import { MessClient } from "@mess.fyi/client";
 
 const key = process.env.MESS_KEY;
 if (!key) {

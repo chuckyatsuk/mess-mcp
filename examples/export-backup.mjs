@@ -11,7 +11,7 @@
 // real changes only.
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { MessClient } from "@mess/client";
+import { MessClient } from "@mess.fyi/client";
 
 const key = process.env.MESS_KEY;
 if (!key) {

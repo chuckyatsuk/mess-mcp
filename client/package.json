@@ -1,6 +1,6 @@
 {
-  "name": "@mess/client",
-  "version": "0.0.0",
+  "name": "@mess.fyi/client",
+  "version": "0.1.0",
   "description": "Typed zero-dependency client for the MESS REST API (mess.fyi) — the ledger your agents keep.",
   "license": "MIT",
   "homepage": "https://mess.fyi",
@@ -29,7 +29,8 @@
   "scripts": {
     "build": "tsc",
     "test": "tsc && node --test test/*.test.mjs",
-    "smoke": "tsc && node smoke.mjs"
+    "smoke": "tsc && node smoke.mjs",
+    "prepublishOnly": "npm test"
   },
   "devDependencies": {
     "typescript": "^5.6.0"

@@ -6,6 +6,6 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@mess/client": "file:../client"
+    "@mess.fyi/client": "file:../client"
   }
 }

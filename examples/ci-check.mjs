@@ -12,7 +12,7 @@
 // Exit 1 with a list of unlogged providers; exit 0 clean.
 import { readFileSync, readdirSync } from "node:fs";
 import { basename } from "node:path";
-import { MessClient } from "@mess/client";
+import { MessClient } from "@mess.fyi/client";
 
 // provider -> fingerprints matched against env var names and package deps
 const FINGERPRINTS = {

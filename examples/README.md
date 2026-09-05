@@ -1,6 +1,6 @@
 # Examples
 
-Three scripts against the REST surface, using [`@mess/client`](../client/).
+Three scripts against the REST surface, using [`@mess.fyi/client`](../client/).
 Each wants `MESS_KEY` in the environment (an agent key from
 mess.fyi → Settings → Agent keys) and nothing else.
 
